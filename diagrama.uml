@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>ro.tuc.tp.Logic.SimulationManager</OriginalElement>
+  <nodes>
+    <node x="1111.9943181818182" y="643.0">ro.tuc.tp.GUI.Controller</node>
+    <node x="695.4943181818181" y="620.0">ro.tuc.tp.GUI.SelectionPolicy</node>
+    <node x="235.24431818181813" y="843.0">ro.tuc.tp.Logic.Scheduler</node>
+    <node x="95.46670751633985" y="302.0">ro.tuc.tp.DataModel.Coada</node>
+    <node x="527.9612856506238" y="80.0">ro.tuc.tp.DataModel.Client</node>
+    <node x="947.4943181818181" y="357.0">ro.tuc.tp.Logic.Sort</node>
+    <node x="434.49431818181813" y="631.0">ro.tuc.tp.GUI.ConcreteStrategyQueue</node>
+    <node x="303.99431818181813" y="516.0">ro.tuc.tp.GUI.Strategy</node>
+    <node x="44.0" y="124.0">java.lang.Runnable</node>
+    <node x="804.9943181818181" y="1120.0">ro.tuc.tp.Logic.SimulationManager</node>
+    <node x="0.0" y="0.0">java.lang.FunctionalInterface</node>
+    <node x="173.49431818181813" y="631.0">ro.tuc.tp.GUI.ConcreteStrategyTime</node>
+    <node x="1051.9943181818182" y="766.0">ro.tuc.tp.GUI.SimulationFrame</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="ro.tuc.tp.Logic.SimulationManager" target="java.lang.Runnable">
+      <point x="-100.0" y="-71.0" />
+      <point x="814.9943181818181" y="1100.0" />
+      <point x="72.0" y="1100.0" />
+      <point x="-28.0" y="27.0" />
+    </edge>
+    <edge source="ro.tuc.tp.Logic.Sort" target="ro.tuc.tp.DataModel.Client">
+      <point x="0.0" y="-27.0" />
+      <point x="1041.494318181818" y="242.0" />
+      <point x="672.0976492869875" y="242.0" />
+      <point x="68.63636363636363" y="71.0" />
+    </edge>
+    <edge source="ro.tuc.tp.Logic.SimulationManager" target="ro.tuc.tp.Logic.Sort">
+      <point x="60.0" y="-71.0" />
+      <point x="974.9943181818181" y="1080.0" />
+      <point x="1041.494318181818" y="1080.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="ro.tuc.tp.Logic.Scheduler" target="ro.tuc.tp.GUI.ConcreteStrategyQueue">
+      <point x="46.3125" y="-60.0" />
+      <point x="405.05681818181813" y="726.0" />
+      <point x="554.4943181818181" y="726.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="ro.tuc.tp.DataModel.Coada" target="ro.tuc.tp.DataModel.Client">
+      <point x="-23.125" y="-82.0" />
+      <point x="164.84170751633985" y="242.0" />
+      <point x="534.8249220142602" y="242.0" />
+      <point x="-68.63636363636363" y="71.0" />
+    </edge>
+    <edge source="java.lang.Runnable" target="java.lang.FunctionalInterface">
+      <point x="0.0" y="-27.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="ro.tuc.tp.GUI.SimulationFrame" target="ro.tuc.tp.GUI.Controller">
+      <point x="-93.0" y="-137.0" />
+      <point x="1082.9943181818182" y="746.0" />
+      <point x="1127.9943181818182" y="746.0" />
+      <point x="-48.0" y="15.0" />
+    </edge>
+    <edge source="ro.tuc.tp.Logic.SimulationManager" target="ro.tuc.tp.GUI.SelectionPolicy">
+      <point x="-40.0" y="-71.0" />
+      <point x="874.9943181818181" y="1070.0" />
+      <point x="819.3097704991087" y="1070.0" />
+      <point x="819.3097704991087" y="746.0" />
+      <point x="799.9943181818181" y="746.0" />
+      <point x="0.0" y="38.0" />
+    </edge>
+    <edge source="ro.tuc.tp.Logic.Scheduler" target="ro.tuc.tp.DataModel.Client">
+      <point x="77.1875" y="-60.0" />
+      <point x="435.93181818181813" y="736.0" />
+      <point x="684.9943181818181" y="736.0" />
+      <point x="684.9943181818181" y="282.0" />
+      <point x="617.1885583778966" y="282.0" />
+      <point x="13.727272727272748" y="71.0" />
+    </edge>
+    <edge source="ro.tuc.tp.Logic.SimulationManager" target="ro.tuc.tp.GUI.SimulationFrame">
+      <point x="80.0" y="-71.0" />
+      <point x="994.9943181818181" y="1090.0" />
+      <point x="1113.9943181818182" y="1090.0" />
+      <point x="-62.0" y="137.0" />
+    </edge>
+    <edge source="ro.tuc.tp.Logic.Scheduler" target="ro.tuc.tp.DataModel.Coada">
+      <point x="-77.1875" y="-60.0" />
+      <point x="281.55681818181813" y="736.0" />
+      <point x="136.14583333333326" y="736.0" />
+      <point x="136.14583333333326" y="496.0" />
+      <point x="141.71670751633985" y="496.0" />
+      <point x="-46.25" y="82.0" />
+    </edge>
+    <edge source="ro.tuc.tp.GUI.ConcreteStrategyTime" target="ro.tuc.tp.DataModel.Client">
+      <point x="0.0" y="-27.0" />
+      <point x="293.49431818181813" y="595.0" />
+      <point x="290.96670751633985" y="595.0" />
+      <point x="290.96670751633985" y="272.0" />
+      <point x="576.0067401960783" y="272.0" />
+      <point x="-27.454545454545496" y="71.0" />
+    </edge>
+    <edge source="ro.tuc.tp.GUI.ConcreteStrategyTime" target="ro.tuc.tp.DataModel.Coada">
+      <point x="-80.0" y="-27.0" />
+      <point x="213.49431818181813" y="595.0" />
+      <point x="190.0624999999999" y="595.0" />
+      <point x="190.0624999999999" y="496.0" />
+      <point x="203.38337418300648" y="496.0" />
+      <point x="15.416666666666629" y="82.0" />
+    </edge>
+    <edge source="ro.tuc.tp.Logic.Scheduler" target="ro.tuc.tp.GUI.SelectionPolicy">
+      <point x="108.0625" y="-60.0" />
+      <point x="466.80681818181813" y="746.0" />
+      <point x="730.3276515151515" y="746.0" />
+      <point x="-69.66666666666663" y="38.0" />
+    </edge>
+    <edge source="ro.tuc.tp.GUI.ConcreteStrategyQueue" target="ro.tuc.tp.DataModel.Client">
+      <point x="80.0" y="-27.0" />
+      <point x="634.4943181818181" y="595.0" />
+      <point x="603.4612856506238" y="595.0" />
+      <point x="0.0" y="71.0" />
+    </edge>
+    <edge source="ro.tuc.tp.GUI.ConcreteStrategyQueue" target="ro.tuc.tp.DataModel.Coada">
+      <point x="0.0" y="-27.0" />
+      <point x="554.4943181818181" y="595.0" />
+      <point x="573.8097704991087" y="595.0" />
+      <point x="573.8097704991087" y="486.0" />
+      <point x="265.0500408496731" y="486.0" />
+      <point x="77.08333333333326" y="82.0" />
+    </edge>
+    <edge source="ro.tuc.tp.DataModel.Coada" target="java.lang.Runnable">
+      <point x="-69.375" y="-82.0" />
+      <point x="118.59170751633985" y="282.0" />
+      <point x="128.0" y="282.0" />
+      <point x="28.0" y="27.0" />
+    </edge>
+    <edge source="ro.tuc.tp.GUI.Strategy" target="ro.tuc.tp.DataModel.Coada">
+      <point x="-59.99999999999994" y="-27.0" />
+      <point x="363.9943181818182" y="496.0" />
+      <point x="234.21670751633985" y="496.0" />
+      <point x="46.24999999999997" y="82.0" />
+    </edge>
+    <edge source="ro.tuc.tp.Logic.Scheduler" target="ro.tuc.tp.GUI.Strategy">
+      <point x="15.4375" y="-60.0" />
+      <point x="374.18181818181813" y="716.0" />
+      <point x="423.99431818181813" y="716.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="ro.tuc.tp.GUI.ConcreteStrategyQueue" target="ro.tuc.tp.GUI.Strategy">
+      <point x="-80.0" y="-27.0" />
+      <point x="474.49431818181813" y="595.0" />
+      <point x="503.99431818181813" y="595.0" />
+      <point x="80.0" y="27.0" />
+    </edge>
+    <edge source="ro.tuc.tp.GUI.Strategy" target="ro.tuc.tp.DataModel.Client">
+      <point x="60.00000000000006" y="-27.0" />
+      <point x="483.9943181818182" y="282.0" />
+      <point x="589.7340129233511" y="282.0" />
+      <point x="-13.727272727272748" y="71.0" />
+    </edge>
+    <edge source="ro.tuc.tp.Logic.SimulationManager" target="ro.tuc.tp.DataModel.Client">
+      <point x="0.0" y="-71.0" />
+      <point x="914.9943181818181" y="272.0" />
+      <point x="630.9158311051692" y="272.0" />
+      <point x="27.454545454545382" y="71.0" />
+    </edge>
+    <edge source="ro.tuc.tp.GUI.Controller" target="ro.tuc.tp.GUI.SimulationFrame">
+      <point x="16.0" y="15.0" />
+      <point x="1191.9943181818182" y="746.0" />
+      <point x="1206.9943181818182" y="746.0" />
+      <point x="31.0" y="-137.0" />
+    </edge>
+    <edge source="ro.tuc.tp.GUI.ConcreteStrategyTime" target="ro.tuc.tp.GUI.Strategy">
+      <point x="80.0" y="-27.0" />
+      <point x="373.49431818181813" y="595.0" />
+      <point x="343.99431818181813" y="595.0" />
+      <point x="-80.0" y="27.0" />
+    </edge>
+    <edge source="ro.tuc.tp.Logic.SimulationManager" target="ro.tuc.tp.Logic.Scheduler">
+      <point x="-80.0" y="-71.0" />
+      <point x="834.9943181818181" y="1090.0" />
+      <point x="296.99431818181813" y="1090.0" />
+      <point x="-61.75" y="60.0" />
+    </edge>
+    <edge source="ro.tuc.tp.Logic.Scheduler" target="ro.tuc.tp.GUI.ConcreteStrategyTime">
+      <point x="-15.4375" y="-60.0" />
+      <point x="343.30681818181813" y="716.0" />
+      <point x="293.49431818181813" y="716.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="673.5" y="636.0" />
+  <SelectedNodes>
+    <node>ro.tuc.tp.Logic.SimulationManager</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
