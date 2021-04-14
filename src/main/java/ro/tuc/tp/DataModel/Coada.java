@@ -21,31 +21,23 @@ public class Coada implements Runnable {
 
     public void run() {
         while(true) {
-            while (clienti.peek() != null) {
+            while (!clienti.isEmpty()) {
                 try {
                     Thread.sleep(1000);   //timpul e in milisecunde
                     waitingTime.getAndDecrement();  //scadem din timpul de asteptat
                     int timp = clienti.peek().getService();
                     timp--;
                     clienti.peek().setService(timp);
-                    if(timp == 0) {
-                        clienti.poll();
+                    if(clienti.peek().getService() == 0) {
+                        clienti.take();
                     }
                 } catch (Exception e) {}
             }
         }
     }
 
-    public Client[] getClients() {
-        Client[] c = new Client[clienti.size()];
-        int i = 0;
-
-        Iterator<Client> it = clienti.iterator();
-        while(it.hasNext()) {
-            c[i] = it.next();
-            i++;
-        }
-        return c;
+    public BlockingQueue<Client> getClients() {
+        return clienti;
     }
 
     public int getWaitingTime() {
@@ -60,7 +52,7 @@ public class Coada implements Runnable {
         if(clienti.peek() == null && waitingTime.intValue() == 0) {
             return "closed";
         } else {
-            return clienti.peek().toString();
+            return clienti.toString();
         }
     }
 }

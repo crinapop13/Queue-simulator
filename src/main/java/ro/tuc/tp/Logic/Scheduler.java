@@ -18,7 +18,8 @@ public class Scheduler {
     public Scheduler(int maxNrCozi, int maxClientPerCoada) {
         this.maxNrCozi = maxNrCozi;
         this.maxClientPerCoada = maxClientPerCoada;
-        this.cozi = new ArrayList<Coada>();
+        this.cozi = new ArrayList<Coada>(maxNrCozi);
+        strategy = new ConcreteStrategyTime();
         ArrayList<Thread> t = new ArrayList<Thread>(maxNrCozi);
         for(int i = 0; i < maxNrCozi; i++) {
             Coada c = new Coada();
@@ -43,6 +44,27 @@ public class Scheduler {
 
     public List<Coada> getCoada() {
         return cozi;
+    }
+
+    public int getTotalWaitingTime() {
+        int totalWaitingTime = 0;
+        for(Coada c: cozi) {
+            totalWaitingTime += c.getWaitingTime();
+        }
+        return totalWaitingTime;
+    }
+
+    public boolean isEmpty() {
+        for (int i = 0; i < cozi.size(); i++) {
+            if(!cozi.get(i).getClients().isEmpty()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public int getMaxNrCozi() {
+        return maxNrCozi;
     }
 
     public String toString() {

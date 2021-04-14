@@ -1,7 +1,6 @@
 package ro.tuc.tp.Logic;
 
 import ro.tuc.tp.DataModel.Client;
-import ro.tuc.tp.DataModel.Coada;
 import ro.tuc.tp.GUI.SelectionPolicy;
 import ro.tuc.tp.GUI.SimulationFrame;
 import javax.swing.*;
@@ -24,22 +23,6 @@ public class SimulationManager implements Runnable{
     private FileWriter myWriter;
 
     public SimulationManager() {
-        /*Scanner s = new Scanner(System.in);
-        System.out.println("Introduceti timpul de simulare: ");
-        timeLimit = s.nextInt();
-        System.out.println("Introduceti nr. de clienti: ");
-        numberOfClients = s.nextInt();
-        System.out.println("Introduceti nr. de cozi: ");
-        numberOfQueues = s.nextInt();
-        System.out.println("Introduceti timpul minim de servire: ");
-        minProcessingTime = s.nextInt();
-        System.out.println("Introduceti timpul maxim de servire: ");
-        maxProcessingTime = s.nextInt();
-        System.out.println("Introduceti timpul minim de sosire: ");
-        minArrivingTime = s.nextInt();
-        System.out.println("Introduceti timpul maxim de sosire: ");
-        maxArrivingTime = s.nextInt();*/
-
         timeLimit = frame.getSimTime();
         numberOfClients = frame.getN();
         numberOfQueues = frame.getQ();
@@ -75,33 +58,49 @@ public class SimulationManager implements Runnable{
 
     public void run() {
         int currentTime = 0;
-        int clientiPerCoada = 0;
-        while(currentTime < timeLimit && !generatedClients.isEmpty()) {
-            Iterator<Client> it = generatedClients.iterator();
-            while(it.hasNext()) {
-                Client c = it.next();
-                if (c.getArrival() == currentTime) {
-                    scheduler.dispatchClient(c);
-                    clientiPerCoada++;
-                    it.remove();
+        int servTime = 0;
+        int size = generatedClients.size();
+        int peekHour = 0, max = -1;
+        Iterator<Client> it = generatedClients.iterator();
+        Client c = it.next();
+        while(currentTime < timeLimit) {
+            while(c.getArrival() == currentTime) {
+                scheduler.dispatchClient(c);
+                servTime += c.getService();
+                it.remove();
+                if(it.hasNext()) {
+                    c = it.next();
+                } else {
+                    break;
                 }
             }
             try {
                 myWriter.write(afiseazaRezultat(currentTime));
                 frame.setResult(afiseazaRezultat(currentTime));
             } catch(Exception e){}
-            System.out.println(afiseazaRezultat(currentTime));
+            //System.out.println(afiseazaRezultat(currentTime));
+            int tot = scheduler.getTotalWaitingTime();
+            if(max < tot) {
+                max = tot;
+                peekHour = currentTime;
+            }
             currentTime++;
             try {
                 Thread.sleep(1000);
             } catch(Exception e) {}
+
+            if(c.getService() == 0 && scheduler.isEmpty()) {
+                break;
+            }
         }
+
         try {
-            myWriter.write("\r\nAverage waiting time: " + clientiPerCoada / (1.0*currentTime*numberOfQueues));
+            myWriter.write("\r\nAverage service time: " + servTime / (1.0*size) + "\n");
+            myWriter.write("\r\nPeek hour: " + peekHour + "\n");
+            frame.setResult("\r\nAverage service time: " + servTime / (1.0*size) + "\n" + "Peek hour: " + peekHour + "\n");
             myWriter.flush();
             myWriter.close();
         } catch(Exception e){}
-        System.out.println("\r\nAverage waiting time: " + clientiPerCoada / (1.0*currentTime*numberOfQueues));
     }
 
     public String afiseazaRezultat(int t) {
