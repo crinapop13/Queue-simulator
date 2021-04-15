@@ -46,12 +46,13 @@ public class Scheduler {
         return cozi;
     }
 
-    public int getTotalWaitingTime() {
-        int totalWaitingTime = 0;
+    public int getNumberOfClienti() {
+
+        int clienti = 0;
         for(Coada c: cozi) {
-            totalWaitingTime += c.getWaitingTime();
+            clienti += c.getSizeOfQueue();
         }
-        return totalWaitingTime;
+        return clienti;
     }
 
     public boolean isEmpty() {

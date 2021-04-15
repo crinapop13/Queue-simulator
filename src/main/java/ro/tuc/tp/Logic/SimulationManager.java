@@ -79,9 +79,9 @@ public class SimulationManager implements Runnable{
                 frame.setResult(afiseazaRezultat(currentTime));
             } catch(Exception e){}
             //System.out.println(afiseazaRezultat(currentTime));
-            int tot = scheduler.getTotalWaitingTime();
-            if(max < tot) {
-                max = tot;
+            int clientiCozi = scheduler.getNumberOfClienti();
+            if(max < clientiCozi) {
+                max = clientiCozi;
                 peekHour = currentTime;
             }
             currentTime++;
