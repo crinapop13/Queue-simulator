@@ -11,6 +11,7 @@ public class ConcreteStrategyQueue implements Strategy {
         for(int i = 1; i < cozi.size(); i++) {
             if (minNbClienti > cozi.get(i).getSizeOfQueue()) {
                 minNbClienti = cozi.get(i).getSizeOfQueue();
+                poz = i;
             }
         }
         cozi.get(poz).adaugaClient(c);
